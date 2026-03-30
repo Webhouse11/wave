@@ -75,22 +75,32 @@ const Marquee = () => {
   ];
 
   return (
-    <div className="relative flex overflow-x-hidden mb-8 py-3 border-y border-zinc-800/50 bg-zinc-900/30">
-      <div className="animate-marquee whitespace-nowrap flex items-center">
-        {scrollingTestimonials.map((t, i) => (
-          <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 flex items-center gap-2">
-            <Star size={10} className="fill-green-500 text-green-500" />
-            {t}
-          </span>
-        ))}
+    <div className="relative flex items-center overflow-x-hidden mb-8 py-3 border-y border-zinc-800/50 bg-zinc-900/30">
+      {/* Static Alert Label */}
+      <div className="flex-none px-6 z-10 border-r border-zinc-800/50 bg-zinc-900/80 backdrop-blur-sm">
+        <span className="text-red-500 font-black uppercase tracking-widest text-[10px] animate-pulse">
+          Alert
+        </span>
       </div>
-      <div className="animate-marquee whitespace-nowrap flex items-center">
-        {scrollingTestimonials.map((t, i) => (
-          <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 flex items-center gap-2">
-            <Star size={10} className="fill-green-500 text-green-500" />
-            {t}
-          </span>
-        ))}
+
+      {/* Marquee Content */}
+      <div className="flex overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap flex items-center">
+          {scrollingTestimonials.map((t, i) => (
+            <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white flex items-center gap-2">
+              <Star size={10} className="fill-green-500 text-green-500" />
+              {t}
+            </span>
+          ))}
+        </div>
+        <div className="animate-marquee whitespace-nowrap flex items-center">
+          {scrollingTestimonials.map((t, i) => (
+            <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white flex items-center gap-2">
+              <Star size={10} className="fill-green-500 text-green-500" />
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
