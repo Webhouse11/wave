@@ -583,9 +583,6 @@ export default function App() {
         <p className="text-zinc-400 text-sm mb-8 max-w-3xl mx-auto leading-relaxed">
           Wave Forex Academy is a results-driven forex training platform built to turn complete beginners and struggling traders into confident, disciplined market participants through practical, real-time learning. Rather than relying on hype or blind signals, the academy focuses on teaching a clear, structured trading approach—combining live market guidance, consistent trade opportunities, and strong risk management principles—so students understand exactly what they are doing and why. With a supportive learning environment, hands-on mentorship, and a focus on long-term profitability, Wave Forex Academy positions itself as a trusted path for anyone serious about mastering forex and creating a sustainable income skill.
         </p>
-        <p className="text-zinc-600 text-[10px] mb-8 max-w-xl mx-auto uppercase tracking-widest">
-          Risk Warning: Trading Forex involves significant risk and is not suitable for everyone. Only trade with capital you can afford to lose.
-        </p>
         <div className="flex justify-center gap-8 text-zinc-400 text-sm mb-12">
           <button 
             onClick={() => setLegalModal({ type: 'terms', isOpen: true })}
