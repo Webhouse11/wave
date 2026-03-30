@@ -16,6 +16,7 @@ import {
   History, 
   Wallet, 
   ArrowRight,
+  Mail,
   HelpCircle,
   Clock
 } from 'lucide-react';
@@ -29,7 +30,7 @@ import WhatsAppChatSim from './components/WhatsAppChatSim';
 import LegalModal, { TermsContent, PrivacyContent } from './components/LegalModals';
 
 // --- Constants ---
-const WHATSAPP_LINK = "https://wa.me/2348060180077?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
+const WHATSAPP_LINK = "https://wa.me/2347063455046?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
 const START_DATE = "2026-04-06T09:00:00";
 const PRICE = "₦200,000";
 
@@ -640,6 +641,18 @@ export default function App() {
         <p className="text-zinc-400 text-sm mb-8 max-w-3xl mx-auto leading-relaxed">
           Wave Forex Academy is a results-driven forex training platform built to turn complete beginners and struggling traders into confident, disciplined market participants through practical, real-time learning. Rather than relying on hype or blind signals, the academy focuses on teaching a clear, structured trading approach—combining live market guidance, consistent trade opportunities, and strong risk management principles—so students understand exactly what they are doing and why. With a supportive learning environment, hands-on mentorship, and a focus on long-term profitability, Wave Forex Academy positions itself as a trusted path for anyone serious about mastering forex and creating a sustainable income skill.
         </p>
+        
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-zinc-400 text-sm mb-12">
+          <div className="flex items-center gap-2">
+            <MessageCircle size={16} className="text-green-500" />
+            <span>+234 706 345 5046</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail size={16} className="text-green-500" />
+            <a href="mailto:wgloacademy@gmail.com" className="hover:text-white transition-colors">wgloacademy@gmail.com</a>
+          </div>
+        </div>
+
         <div className="flex justify-center gap-8 text-zinc-400 text-sm mb-12">
           <button 
             onClick={() => setLegalModal({ type: 'terms', isOpen: true })}

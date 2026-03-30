@@ -10,7 +10,7 @@ interface Message {
 }
 
 const BOT_NAME = "Wave Academy Support";
-const WHATSAPP_LINK = "https://wa.me/2348060180077?text=I'm%20ready%20to%20enroll%20in%20Wave%20Forex%20Academy";
+const WHATSAPP_LINK = "https://wa.me/2347063455046?text=I'm%20ready%20to%20enroll%20in%20Wave%20Forex%20Academy";
 
 export default function WhatsAppChatSim() {
   const [messages, setMessages] = useState<Message[]>([]);
