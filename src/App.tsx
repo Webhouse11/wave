@@ -130,7 +130,7 @@ export default function App() {
             <div className="absolute -inset-4 bg-green-500/10 blur-3xl rounded-full" />
             <div className="relative bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1611974717483-9b910c063bb9?q=80&w=1200&auto=format&fit=crop" 
+                src="https://res.cloudinary.com/dhzouslh1/image/upload/v1774879269/1000152823_fggmb4.jpg" 
                 alt="Forex Trading Chart" 
                 style={{ width: '100%', borderRadius: '10px' }} 
                 referrerPolicy="no-referrer"
@@ -185,6 +185,27 @@ export default function App() {
         </div>
       </Section>
 
+      {/* 2.5 WATCH US IN ACTION */}
+      <Section className="bg-zinc-900/50 border-y border-zinc-800/50">
+        <div className="text-center mb-12">
+          <Badge className="mb-4">Live Proof</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold italic serif mb-4">Watch Us In Action</h2>
+          <p className="text-zinc-400 max-w-2xl mx-auto">See how we analyze and execute trades in real-time. No hype, just pure market mechanics.</p>
+        </div>
+        <div className="max-w-md mx-auto aspect-[9/16] bg-zinc-900 border border-zinc-800 rounded-[2rem] overflow-hidden shadow-2xl relative">
+          <iframe 
+            src="https://www.youtube.com/embed/XO31Ygo2jmM" 
+            title="Wave Forex Academy Live Proof"
+            className="absolute inset-0 w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+          />
+        </div>
+        <div className="mt-12 text-center">
+          <CTAButton />
+        </div>
+      </Section>
+
       {/* 3. REAL TRADE PROOF SECTION (CORE) */}
       <Section id="proof" className="text-center">
         <Badge className="mb-6">
@@ -201,29 +222,29 @@ export default function App() {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=800&auto=format&fit=crop" 
+              src="https://res.cloudinary.com/dhzouslh1/image/upload/v1774879269/1000152822_u4bwpq.jpg" 
               alt="MT5 Profit Proof" 
               style={{ width: '100%', borderRadius: '10px' }} 
               referrerPolicy="no-referrer"
               onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x500?text=Insert+Real+MT5+Profit+Screenshot'; }}
             />
             <div className="p-6 text-left border-t border-zinc-800">
-              <h4 className="font-bold text-white mb-2 italic serif">Why this trade was taken:</h4>
-              <p className="text-zinc-500 text-sm">Institutional liquidity grab at the London open. We waited for the sweep and entered on the 5m displacement.</p>
+              <h4 className="font-bold text-white mb-2 italic serif">Institutional Execution:</h4>
+              <p className="text-zinc-500 text-sm">Real-time profit growth using our proprietary Wave Strategy. We target high-probability zones with precision.</p>
             </div>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop" 
+              src="https://res.cloudinary.com/dhzouslh1/image/upload/v1774879269/1000152825_psrriz.jpg" 
               alt="TradingView Execution Proof" 
               style={{ width: '100%', borderRadius: '10px' }} 
               referrerPolicy="no-referrer"
               onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x500?text=Insert+Real+TradingView+Execution+Proof'; }}
             />
             <div className="p-6 text-left border-t border-zinc-800">
-              <h4 className="font-bold text-white mb-2 italic serif">The Outcome:</h4>
-              <p className="text-zinc-500 text-sm">Target reached at the previous day high. 1:4 Risk-to-Reward ratio achieved with zero drawdown.</p>
+              <h4 className="font-bold text-white mb-2 italic serif">Market Analysis:</h4>
+              <p className="text-zinc-500 text-sm">Clear institutional footprints identified. We wait for the setup and execute with zero hesitation.</p>
             </div>
           </div>
         </div>
@@ -265,7 +286,7 @@ export default function App() {
             <div className="absolute -inset-4 bg-green-500/5 blur-3xl rounded-full" />
             <div className="relative bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1611974717483-9b910c063bb9?q=80&w=800&auto=format&fit=crop" 
+                src="https://res.cloudinary.com/dhzouslh1/image/upload/v1774879262/1000152826_yo0hx0.jpg" 
                 alt="Student Growth Chart" 
                 style={{ width: '100%', borderRadius: '10px' }} 
                 referrerPolicy="no-referrer"

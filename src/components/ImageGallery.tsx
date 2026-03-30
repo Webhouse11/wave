@@ -9,24 +9,29 @@ interface ProofImage {
 
 const proofImages: ProofImage[] = [
   {
-    src: 'https://images.unsplash.com/photo-1611974717483-9b910c063bb9?q=80&w=800&auto=format&fit=crop',
-    caption: 'Real-time market analysis using Wave Strategy',
+    src: 'https://res.cloudinary.com/dhzouslh1/image/upload/v1774879269/1000152823_fggmb4.jpg',
+    caption: 'Real-time market analysis and institutional entry',
     type: 'Chart Analysis',
   },
   {
-    src: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop',
-    caption: 'Institutional entry points identified on EUR/USD',
-    type: 'Trade Setup',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=800&auto=format&fit=crop',
-    caption: 'Consistent profit growth across multiple pairs',
+    src: 'https://res.cloudinary.com/dhzouslh1/image/upload/v1774879269/1000152822_u4bwpq.jpg',
+    caption: 'Consistent profit growth using Wave Strategy',
     type: 'Profit Proof',
   },
   {
-    src: 'https://images.unsplash.com/photo-1611974717483-9b910c063bb9?q=80&w=800&auto=format&fit=crop',
-    caption: 'Live execution proof - GBP/JPY +60 Pips',
+    src: 'https://res.cloudinary.com/dhzouslh1/image/upload/v1774879269/1000152825_psrriz.jpg',
+    caption: 'Live execution proof - High probability setup',
     type: 'Execution',
+  },
+  {
+    src: 'https://res.cloudinary.com/dhzouslh1/image/upload/v1774879262/1000152826_yo0hx0.jpg',
+    caption: 'Institutional footprint identified on major pairs',
+    type: 'Trade Setup',
+  },
+  {
+    src: 'https://res.cloudinary.com/dhzouslh1/image/upload/v1774879261/1000152824_vt1wsl.jpg',
+    caption: 'Verified trading results from our community',
+    type: 'Success Story',
   }
 ];
 

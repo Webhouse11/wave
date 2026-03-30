@@ -98,7 +98,7 @@ export default function WhatsAppChatSim() {
       setCurrentStep(5);
     } else if (currentStep === 5 && option.toLowerCase().includes('yes')) {
       await botReply("Great decision 🔥");
-      await botReply("Here are the details:\n\nBank: [Bank Name]\nAcct: [Account Number]\nName: Wave Forex Academy\n\nOnce you make payment, send proof here so we can confirm your slot immediately.");
+      await botReply("Here are the details:\n\nBank: Zenith Bank\nAcct: 1234567890\nName: Wave Forex Academy\n\nOnce you make payment, send proof here so we can confirm your slot immediately.");
       await botReply("Or click below to chat directly with me on WhatsApp for any final questions! 👇");
     }
   };
