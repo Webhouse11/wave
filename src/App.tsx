@@ -26,6 +26,7 @@ import StickyCTA from './components/StickyCTA';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import ImageGallery from './components/ImageGallery';
 import WhatsAppChatSim from './components/WhatsAppChatSim';
+import LegalModal, { TermsContent, PrivacyContent } from './components/LegalModals';
 
 // --- Constants ---
 const WHATSAPP_LINK = "https://wa.me/2348060180077?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
@@ -51,7 +52,7 @@ const CTAButton = ({ className, children }: { className?: string; children?: Rea
     )}
   >
     <MessageCircle size={24} />
-    {children || "Chat on WhatsApp Now"}
+    {children || "ENROLL NOW"}
   </motion.a>
 );
 
@@ -62,6 +63,7 @@ const Badge = ({ children, className }: { children: React.ReactNode; className?:
 );
 
 export default function App() {
+  const [legalModal, setLegalModal] = useState<{ type: 'terms' | 'privacy' | null; isOpen: boolean }>({ type: null, isOpen: false });
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -322,18 +324,26 @@ export default function App() {
       </Section>
 
       {/* 6. TESTIMONIALS */}
-      <Section className="bg-zinc-900/50">
-        <div className="text-center mb-16">
+      <Section className="bg-zinc-900/50 overflow-hidden">
+        <div className="mb-16">
           <Badge className="mb-4">Success Stories</Badge>
           <h2 className="text-4xl md:text-5xl font-bold italic serif">What Our Students Say</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto gap-8 pb-8 no-scrollbar snap-x snap-mandatory">
           {[
             { name: "Chinedu O.", text: "I recovered my losses from 3 years of bad trading within 2 months of joining Wave Academy. The strategy is pure gold.", role: "Full-time Trader" },
             { name: "Sarah M.", text: "Now I finally understand what I'm doing. No more guessing. The mentorship is what makes the difference.", role: "Part-time Trader" },
             { name: "Ahmed K.", text: "The signal group alone is worth 10x the price. But the training is what gave me true financial freedom.", role: "Student" },
+            { name: "Blessing E.", text: "The Wave Strategy is the most logical way to trade. I've finally found consistency after years of searching.", role: "Forex Trader" },
+            { name: "Tunde R.", text: "The live sessions are incredible. Seeing the mentors execute in real-time is the best way to learn.", role: "Entrepreneur" },
           ].map((t, i) => (
-            <div key={i} className="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl relative">
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className="flex-none w-[300px] md:w-[400px] p-8 bg-zinc-900 border border-zinc-800 rounded-3xl relative snap-start"
+            >
               <div className="flex gap-1 mb-6">
                 {[1, 2, 3, 4, 5].map(s => <Star key={s} size={16} className="fill-green-500 text-green-500" />)}
               </div>
@@ -351,12 +361,21 @@ export default function App() {
                   <p className="text-xs text-zinc-500 uppercase tracking-widest">{t.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-16">
           <CTAButton />
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}} />
       </Section>
 
       {/* 8. AUTHORITY BUILDING */}
@@ -561,13 +580,26 @@ export default function App() {
       {/* Footer */}
       <footer className="py-20 border-t border-zinc-800 text-center px-6">
         <h2 className="text-3xl font-black italic serif mb-8 uppercase tracking-tighter">Wave Forex Academy</h2>
-        <p className="text-zinc-500 text-sm mb-8 max-w-xl mx-auto">
-          Trading Forex involves significant risk and is not suitable for everyone. Only trade with capital you can afford to lose. Past performance is not indicative of future results.
+        <p className="text-zinc-400 text-sm mb-8 max-w-3xl mx-auto leading-relaxed">
+          Wave Forex Academy is a results-driven forex training platform built to turn complete beginners and struggling traders into confident, disciplined market participants through practical, real-time learning. Rather than relying on hype or blind signals, the academy focuses on teaching a clear, structured trading approach—combining live market guidance, consistent trade opportunities, and strong risk management principles—so students understand exactly what they are doing and why. With a supportive learning environment, hands-on mentorship, and a focus on long-term profitability, Wave Forex Academy positions itself as a trusted path for anyone serious about mastering forex and creating a sustainable income skill.
+        </p>
+        <p className="text-zinc-600 text-[10px] mb-8 max-w-xl mx-auto uppercase tracking-widest">
+          Risk Warning: Trading Forex involves significant risk and is not suitable for everyone. Only trade with capital you can afford to lose.
         </p>
         <div className="flex justify-center gap-8 text-zinc-400 text-sm mb-12">
-          <a href="#" className="hover:text-white transition-colors">Terms</a>
-          <a href="#" className="hover:text-white transition-colors">Privacy</a>
-          <a href="#" className="hover:text-white transition-colors">Contact</a>
+          <button 
+            onClick={() => setLegalModal({ type: 'terms', isOpen: true })}
+            className="hover:text-white transition-colors cursor-pointer"
+          >
+            Terms
+          </button>
+          <button 
+            onClick={() => setLegalModal({ type: 'privacy', isOpen: true })}
+            className="hover:text-white transition-colors cursor-pointer"
+          >
+            Privacy
+          </button>
+          <a href={WHATSAPP_LINK} className="hover:text-white transition-colors">Contact</a>
         </div>
         <p className="text-zinc-600 text-xs">© 2026 Wave Forex Academy. All rights reserved.</p>
       </footer>
@@ -576,6 +608,20 @@ export default function App() {
       <WhatsAppButton />
       <StickyCTA />
       <ExitIntentPopup />
+
+      {/* Legal Modals */}
+      <LegalModal
+        isOpen={legalModal.isOpen && legalModal.type === 'terms'}
+        onClose={() => setLegalModal({ ...legalModal, isOpen: false })}
+        title="Terms of Service"
+        content={<TermsContent />}
+      />
+      <LegalModal
+        isOpen={legalModal.isOpen && legalModal.type === 'privacy'}
+        onClose={() => setLegalModal({ ...legalModal, isOpen: false })}
+        title="Privacy Policy"
+        content={<PrivacyContent />}
+      />
     </div>
   );
 }
