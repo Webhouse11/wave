@@ -16,3 +16,14 @@
     @apply bg-brand-dark text-zinc-100 font-sans antialiased selection:bg-brand-green selection:text-white;
   }
 }
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+}

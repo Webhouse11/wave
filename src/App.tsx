@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, AnimatePresence } from 'motion/react';
 import { 
   MessageCircle, 
   TrendingUp, 
@@ -62,6 +62,39 @@ const Badge = ({ children, className }: { children: React.ReactNode; className?:
   </span>
 );
 
+const Marquee = () => {
+  const scrollingTestimonials = [
+    "I've finally found consistency after years of searching. - Blessing E.",
+    "The live sessions are incredible. Seeing the mentors execute in real-time is the best. - Tunde R.",
+    "I recovered my losses from 3 years of bad trading within 2 months. - Chinedu O.",
+    "The risk management module alone saved me from a massive loss last week. - Emeka V.",
+    "Now I finally understand what I'm doing. No more guessing. - Sarah M.",
+    "The signal group alone is worth 10x the price. - Ahmed K.",
+    "Wave Forex Academy is the only one that actually shows you how to trade live. - Fatima S."
+  ];
+
+  return (
+    <div className="relative flex overflow-x-hidden mb-8 py-3 border-y border-zinc-800/50 bg-zinc-900/30">
+      <div className="animate-marquee whitespace-nowrap flex items-center">
+        {scrollingTestimonials.map((t, i) => (
+          <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 flex items-center gap-2">
+            <Star size={10} className="fill-green-500 text-green-500" />
+            {t}
+          </span>
+        ))}
+      </div>
+      <div className="animate-marquee whitespace-nowrap flex items-center">
+        {scrollingTestimonials.map((t, i) => (
+          <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 flex items-center gap-2">
+            <Star size={10} className="fill-green-500 text-green-500" />
+            {t}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default function App() {
   const [legalModal, setLegalModal] = useState<{ type: 'terms' | 'privacy' | null; isOpen: boolean }>({ type: null, isOpen: false });
   const { scrollYProgress } = useScroll();
@@ -70,6 +103,25 @@ export default function App() {
     damping: 30,
     restDelta: 0.001
   });
+
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const testimonials = [
+    { name: "Chinedu O.", text: "I recovered my losses from 3 years of bad trading within 2 months of joining Wave Academy. The strategy is pure gold.", role: "Full-time Trader" },
+    { name: "Sarah M.", text: "Now I finally understand what I'm doing. No more guessing. The mentorship is what makes the difference.", role: "Part-time Trader" },
+    { name: "Ahmed K.", text: "The signal group alone is worth 10x the price. But the training is what gave me true financial freedom.", role: "Student" },
+    { name: "Blessing E.", text: "The Wave Strategy is the most logical way to trade. I've finally found consistency after years of searching.", role: "Forex Trader" },
+    { name: "Tunde R.", text: "The live sessions are incredible. Seeing the mentors execute in real-time is the best way to learn.", role: "Entrepreneur" },
+    { name: "Emeka V.", text: "The risk management module alone saved me from a massive loss last week. This academy is a lifesaver.", role: "Part-time Trader" },
+    { name: "Fatima S.", text: "I've tried many courses, but Wave Forex Academy is the only one that actually shows you how to trade live.", role: "Forex Enthusiast" },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -89,6 +141,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <Marquee />
             <Badge className="mb-6">
               <Users size={12} className="text-green-500" />
               Wave Forex Academy Batch April 2026
@@ -324,58 +377,62 @@ export default function App() {
       </Section>
 
       {/* 6. TESTIMONIALS */}
-      <Section className="bg-zinc-900/50 overflow-hidden">
+      <Section className="bg-zinc-900/50 overflow-hidden text-center">
         <div className="mb-16">
           <Badge className="mb-4">Success Stories</Badge>
           <h2 className="text-4xl md:text-5xl font-bold italic serif">What Our Students Say</h2>
         </div>
-        <div className="flex overflow-x-auto gap-8 pb-8 no-scrollbar snap-x snap-mandatory">
-          {[
-            { name: "Chinedu O.", text: "I recovered my losses from 3 years of bad trading within 2 months of joining Wave Academy. The strategy is pure gold.", role: "Full-time Trader" },
-            { name: "Sarah M.", text: "Now I finally understand what I'm doing. No more guessing. The mentorship is what makes the difference.", role: "Part-time Trader" },
-            { name: "Ahmed K.", text: "The signal group alone is worth 10x the price. But the training is what gave me true financial freedom.", role: "Student" },
-            { name: "Blessing E.", text: "The Wave Strategy is the most logical way to trade. I've finally found consistency after years of searching.", role: "Forex Trader" },
-            { name: "Tunde R.", text: "The live sessions are incredible. Seeing the mentors execute in real-time is the best way to learn.", role: "Entrepreneur" },
-          ].map((t, i) => (
+        
+        <div className="relative max-w-4xl mx-auto h-[400px] md:h-[350px] flex items-center justify-center">
+          <AnimatePresence mode="wait">
             <motion.div 
-              key={i} 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="flex-none w-[300px] md:w-[400px] p-8 bg-zinc-900 border border-zinc-800 rounded-3xl relative snap-start"
+              key={currentTestimonial}
+              initial={{ opacity: 0, x: 20, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -20, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="w-full p-8 md:p-12 bg-zinc-900 border border-zinc-800 rounded-[2rem] shadow-2xl relative"
             >
-              <div className="flex gap-1 mb-6">
-                {[1, 2, 3, 4, 5].map(s => <Star key={s} size={16} className="fill-green-500 text-green-500" />)}
+              <div className="flex justify-center gap-1 mb-8">
+                {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} className="fill-green-500 text-green-500" />)}
               </div>
-              <p className="text-zinc-300 italic mb-8 text-lg">"{t.text}"</p>
-              <div className="flex items-center gap-4">
+              <p className="text-zinc-200 italic mb-10 text-xl md:text-2xl leading-relaxed">
+                "{testimonials[currentTestimonial].text}"
+              </p>
+              <div className="flex flex-col items-center gap-4">
                 <img 
-                  src={`https://images.unsplash.com/photo-${1500000000000 + i * 2000000}?auto=format&fit=crop&w=40&h=40`} 
-                  className="w-10 h-10 rounded-full border border-zinc-700" 
-                  alt={t.name}
+                  src={`https://images.unsplash.com/photo-${1500000000000 + currentTestimonial * 2000000}?auto=format&fit=crop&w=64&h=64`} 
+                  className="w-16 h-16 rounded-full border-2 border-zinc-700 object-cover" 
+                  alt={testimonials[currentTestimonial].name}
                   referrerPolicy="no-referrer"
-                  onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/40x40?text=U'; }}
+                  onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/64x64?text=U'; }}
                 />
                 <div>
-                  <p className="font-bold">{t.name}</p>
-                  <p className="text-xs text-zinc-500 uppercase tracking-widest">{t.role}</p>
+                  <p className="font-bold text-lg">{testimonials[currentTestimonial].name}</p>
+                  <p className="text-xs text-zinc-500 uppercase tracking-[0.2em]">{testimonials[currentTestimonial].role}</p>
                 </div>
               </div>
             </motion.div>
-          ))}
+          </AnimatePresence>
+
+          {/* Navigation Dots */}
+          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentTestimonial(i)}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  currentTestimonial === i ? "bg-green-500 w-8" : "bg-zinc-700 hover:bg-zinc-500"
+                )}
+              />
+            ))}
+          </div>
         </div>
-        <div className="mt-16">
+
+        <div className="mt-24">
           <CTAButton />
         </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .no-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}} />
       </Section>
 
       {/* 8. AUTHORITY BUILDING */}
