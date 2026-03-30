@@ -39,7 +39,8 @@ export default function WhatsAppChatSim() {
   useEffect(() => {
     const startChat = async () => {
       await botReply("Hello 👋\nWelcome to *Wave Forex Academy* 📊");
-      await botReply("Quick one…\nAre you looking to:\n\n1️⃣ Learn forex from scratch\n2️⃣ Improve your current trading\n3️⃣ Start earning from trading\n\nReply with 1, 2, or 3 👇");
+      await botReply("Glad to have you here 😊");
+      await botReply("Quick one — what brought you here today?\n\n1️⃣ I want to learn forex from scratch\n2️⃣ I’ve tried trading but I’m not consistent\n3️⃣ I’m looking for a way to earn online\n\nJust reply with 1, 2, or 3 👇");
       setCurrentStep(1);
     };
     startChat();
@@ -56,43 +57,48 @@ export default function WhatsAppChatSim() {
     
     if (currentStep === 1) {
       if (option === '1') {
-        await botReply("Perfect 👌\nYou don’t need any prior experience.");
-        await botReply("We take you from ZERO to understanding how to trade confidently.");
-        await botReply("Can I ask… have you ever tried forex before or this is your first time?");
+        await botReply("Nice 👌\nThat means you’re starting fresh — which is actually the best place to start from.");
+        await botReply("We’ll guide you step-by-step so you don’t make costly mistakes.");
+        await botReply("Can I ask, what made you interested in forex?");
       } else if (option === '2') {
-        await botReply("Nice 🔥\nThen this will help you fix what’s not working.");
-        await botReply("Most traders struggle with entries and risk management — we focus heavily on that.");
-        await botReply("What has been your biggest challenge so far?");
+        await botReply("Good 🔥\nThen we just need to fix what’s not working.");
+        await botReply("Most traders struggle with entries and risk management.");
+        await botReply("What exactly has been your biggest challenge?");
       } else if (option === '3') {
-        await botReply("Love that mindset 💰");
-        await botReply("Forex is one of the most powerful ways to build income when done right.");
+        await botReply("I understand 💯\nA lot of people are looking for extra income now.");
+        await botReply("Forex works — but only when you understand it properly.");
         await botReply("Are you currently trading or just getting started?");
       }
       setCurrentStep(2);
       
       // Trust Building after a short delay
       setTimeout(async () => {
-        await botReply("We don’t just teach theory…\nWe show real trades, real charts, and real results.");
-        await botReply("Our students learn how to:\n✔ Understand the market\n✔ Take correct entries\n✔ Manage risk properly\n\nThat’s how consistency comes in.");
-        await botReply("Would you like to see how the training works? (Reply YES)");
+        await botReply("To be honest with you…");
+        await botReply("A lot of people lose money because they follow signals blindly without understanding the market.");
+        await botReply("That’s why we focus on teaching you how to actually trade — not just copy signals.");
+        await botReply("Would you like me to show you how our training works? (Reply YES)");
         setCurrentStep(3);
       }, 3000);
     } else if (currentStep === 3 && option.toLowerCase().includes('yes')) {
-      await botReply("Great 👍");
-      await botReply("Here’s what you’ll get inside Wave Forex Academy:\n\n📚 1 Month Intensive Training\n📊 Live market guidance\n📡 24/7 Signal access\n📈 Minimum 1 trade daily\n🎓 Certificate + ongoing support\n\nThis is a complete system, not just signals.");
+      await botReply("Alright 👍");
+      await botReply("Here’s what you’ll get:\n\n📚 1 Month Practical Training\n📊 Live trading sessions\n📡 24/7 signal access\n📈 At least 1 trade opportunity daily\n🎓 Certificate + ongoing support\n\nWe focus on making you understand the market, not just guess.");
       await botReply("Training fee is ₦200,000");
-      await botReply("Before you decide…\n\nLet me ask:\nAre you serious about learning this skill, or just exploring for now?");
+      await botReply("Before I continue…\n\nAre you looking to start immediately if you’re convinced, or just gathering info for now?");
       setCurrentStep(4);
     } else if (currentStep === 4) {
-      await botReply("I understand 👌");
-      await botReply("Think about this… Most people lose more than that trying random signals.");
-      await botReply("Here, you’re learning a skill that can pay you for life.");
-      await botReply("Next batch starts: April 6");
-      await botReply("We already have people reserving slots. Do you want me to send you payment details to secure your spot?");
+      if (option.toLowerCase().includes('expensive')) {
+        await botReply("I understand 👍");
+        await botReply("But most people lose more than that from trial and error.");
+        await botReply("Here, you’re learning a skill that can generate income long-term.");
+      } else {
+        await botReply("I understand 👌");
+      }
+      await botReply("Next batch starts soon 📅");
+      await botReply("Do you want me to send you the registration/payment details to secure your spot?");
       setCurrentStep(5);
     } else if (currentStep === 5 && option.toLowerCase().includes('yes')) {
-      await botReply("Perfect 🔥");
-      await botReply("Here are the details to get started:\n\nBank: [Bank Name]\nAcct: [Account Number]\nName: Wave Forex Academy\n\nOnce done, send your proof here so we can confirm your slot immediately.");
+      await botReply("Great decision 🔥");
+      await botReply("Here are the details:\n\nBank: [Bank Name]\nAcct: [Account Number]\nName: Wave Forex Academy\n\nOnce you make payment, send proof here so we can confirm your slot immediately.");
       await botReply("Or click below to chat directly with me on WhatsApp for any final questions! 👇");
     }
   };
@@ -166,6 +172,14 @@ export default function WhatsAppChatSim() {
               Option {opt}
             </button>
           ))}
+          {currentStep === 2 && (
+            <button 
+              onClick={() => handleOption('I am interested')}
+              className="px-4 py-2 bg-white border border-zinc-300 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors"
+            >
+              I am interested
+            </button>
+          )}
           {currentStep === 3 && (
             <button 
               onClick={() => handleOption('YES')}
@@ -175,12 +189,26 @@ export default function WhatsAppChatSim() {
             </button>
           )}
           {currentStep === 4 && (
-            <button 
-              onClick={() => handleOption('I am serious')}
-              className="px-4 py-2 bg-white border border-zinc-300 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors"
-            >
-              I am serious
-            </button>
+            <>
+              <button 
+                onClick={() => handleOption('Start immediately')}
+                className="px-4 py-2 bg-white border border-zinc-300 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors"
+              >
+                Start immediately
+              </button>
+              <button 
+                onClick={() => handleOption('Just gathering info')}
+                className="px-4 py-2 bg-white border border-zinc-300 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors"
+              >
+                Just gathering info
+              </button>
+              <button 
+                onClick={() => handleOption('Too expensive')}
+                className="px-4 py-2 bg-white border border-zinc-300 rounded-full text-sm font-medium hover:bg-zinc-50 transition-colors"
+              >
+                Too expensive?
+              </button>
+            </>
           )}
           {currentStep === 5 && (
             <button 
