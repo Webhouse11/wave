@@ -158,7 +158,7 @@ export default function App() {
               Wave Forex Academy Batch April 2026
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8 uppercase italic serif">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8 uppercase italic font-serif">
               Real Trades. <br />
               <span className="text-green-500">Real Results.</span>
             </h1>
@@ -214,7 +214,7 @@ export default function App() {
             <ShieldCheck size={12} />
             Transparency First
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 italic serif leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 italic font-serif leading-tight">
             Before You Join Any Forex Academy, <span className="text-red-500">See This…</span>
           </h2>
           <div className="space-y-8 text-xl text-zinc-400 leading-relaxed">
@@ -255,7 +255,7 @@ export default function App() {
       <Section className="bg-zinc-900/50 border-y border-zinc-800/50">
         <div className="text-center mb-12">
           <Badge className="mb-4">Live Proof</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold italic serif mb-4">Watch Us In Action</h2>
+          <h2 className="text-4xl md:text-5xl font-bold italic font-serif mb-4">Watch Us In Action</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">See how we analyze and execute trades in real-time. No hype, just pure market mechanics.</p>
         </div>
         <div className="max-w-md mx-auto aspect-[9/16] bg-zinc-900 border border-zinc-800 rounded-[2rem] overflow-hidden shadow-2xl relative">
@@ -278,7 +278,7 @@ export default function App() {
           <BarChart3 size={12} className="text-green-500" />
           Core Evidence
         </Badge>
-        <h2 className="text-4xl md:text-6xl font-black mb-6 italic serif uppercase">
+        <h2 className="text-4xl md:text-6xl font-black mb-6 italic font-serif uppercase">
           Real Market Participation.
         </h2>
         <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-16">
@@ -295,7 +295,7 @@ export default function App() {
               onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x500?text=Insert+Real+MT5+Profit+Screenshot'; }}
             />
             <div className="p-6 text-left border-t border-zinc-800">
-              <h4 className="font-bold text-white mb-2 italic serif">Institutional Execution:</h4>
+              <h4 className="font-bold text-white mb-2 italic font-serif">Institutional Execution:</h4>
               <p className="text-zinc-500 text-sm">Real-time profit growth using our proprietary Wave Strategy. We target high-probability zones with precision.</p>
             </div>
           </div>
@@ -309,7 +309,7 @@ export default function App() {
               onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x500?text=Insert+Real+TradingView+Execution+Proof'; }}
             />
             <div className="p-6 text-left border-t border-zinc-800">
-              <h4 className="font-bold text-white mb-2 italic serif">Market Analysis:</h4>
+              <h4 className="font-bold text-white mb-2 italic font-serif">Market Analysis:</h4>
               <p className="text-zinc-500 text-sm">Clear institutional footprints identified. We wait for the setup and execute with zero hesitation.</p>
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function App() {
       {/* 4. BENEFITS */}
       <Section className="bg-zinc-900/30">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold italic serif mb-4">The Wave Advantage</h2>
+          <h2 className="text-4xl md:text-5xl font-bold italic font-serif mb-4">The Wave Advantage</h2>
           <p className="text-zinc-400">Transform from a confused retail trader to a professional market analyst.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -362,7 +362,7 @@ export default function App() {
           </div>
           <div>
             <Badge className="mb-6">The Roadmap</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 italic serif leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 italic font-serif leading-tight">
               From Beginner to <span className="text-green-500">Confident Trader</span>
             </h2>
             <div className="space-y-8">
@@ -391,7 +391,7 @@ export default function App() {
       <Section className="bg-zinc-900/50 overflow-hidden text-center">
         <div className="mb-16">
           <Badge className="mb-4">Success Stories</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold italic serif">What Our Students Say</h2>
+          <h2 className="text-4xl md:text-5xl font-bold italic font-serif">What Our Students Say</h2>
         </div>
         
         <div className="relative max-w-4xl mx-auto h-[400px] md:h-[350px] flex items-center justify-center">
@@ -449,7 +449,7 @@ export default function App() {
       {/* 8. AUTHORITY BUILDING */}
       <Section className="border-y border-zinc-800">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold italic serif mb-8">More Than Just a Signal Group</h2>
+          <h2 className="text-4xl md:text-5xl font-bold italic font-serif mb-8">More Than Just a Signal Group</h2>
           <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
             Wave Forex Academy is a structured educational institution. We don't just throw signals at you; we provide a complete ecosystem for your growth. From foundational theory to advanced live execution, we are with you every step of the way.
           </p>
@@ -503,7 +503,7 @@ export default function App() {
       <Section className="bg-zinc-900/30">
         <div className="text-center mb-16">
           <Badge className="mb-4 text-green-500 border-green-500/20">Exclusive Bonuses</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold italic serif">Wait, There's More...</h2>
+          <h2 className="text-4xl md:text-5xl font-bold italic font-serif">Wait, There's More...</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {[
@@ -529,7 +529,7 @@ export default function App() {
         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
             <Badge className="mb-6">Live Consultation</Badge>
-            <h2 className="text-4xl md:text-6xl font-black mb-8 italic serif leading-tight uppercase">
+            <h2 className="text-4xl md:text-6xl font-black mb-8 italic font-serif leading-tight uppercase">
               Not Sure If This Is <br />
               <span className="text-green-500">For You?</span>
             </h2>
@@ -562,7 +562,7 @@ export default function App() {
       <Section className="text-center">
         <div className="bg-zinc-900 border border-zinc-800 p-12 rounded-[3rem] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 italic serif">Registration Closes Soon</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 italic font-serif">Registration Closes Soon</h2>
           <p className="text-xl text-zinc-400 mb-12">The April batch starts on <span className="text-white font-bold">April 6th</span>. Once the slots are filled, we close registration to focus on our students.</p>
           
           <CountdownTimer targetDate={START_DATE} />
@@ -581,7 +581,7 @@ export default function App() {
             <p className="text-white font-black uppercase tracking-widest text-sm">Most Popular Choice</p>
           </div>
           <div className="p-12 text-center">
-            <h3 className="text-3xl font-bold mb-2 italic serif">1 Month Intensive Training</h3>
+            <h3 className="text-3xl font-bold mb-2 italic font-serif">1 Month Intensive Training</h3>
             <p className="text-zinc-500 mb-8">Everything you need to become a pro trader.</p>
             
             <div className="mb-12">
@@ -618,7 +618,7 @@ export default function App() {
       {/* 14. FAQ SECTION */}
       <Section id="faq" className="max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold italic serif">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold italic font-serif">Frequently Asked Questions</h2>
         </div>
         <div className="space-y-4">
           {[
@@ -647,7 +647,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-20 border-t border-zinc-800 text-center px-6">
-        <h2 className="text-3xl font-black italic serif mb-8 uppercase tracking-tighter">Wave Forex Academy</h2>
+        <h2 className="text-3xl font-black italic font-serif mb-8 uppercase tracking-tighter">Wave Forex Academy</h2>
         <p className="text-zinc-400 text-sm mb-8 max-w-3xl mx-auto leading-relaxed">
           Wave Forex Academy is a results-driven forex training platform built to turn complete beginners and struggling traders into confident, disciplined market participants through practical, real-time learning. Rather than relying on hype or blind signals, the academy focuses on teaching a clear, structured trading approach—combining live market guidance, consistent trade opportunities, and strong risk management principles—so students understand exactly what they are doing and why. With a supportive learning environment, hands-on mentorship, and a focus on long-term profitability, Wave Forex Academy positions itself as a trusted path for anyone serious about mastering forex and creating a sustainable income skill.
         </p>
