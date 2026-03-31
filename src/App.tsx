@@ -352,7 +352,7 @@ export default function App() {
             <div className="absolute -inset-4 bg-green-500/5 blur-3xl rounded-full" />
             <div className="relative bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
               <img 
-                src="https://res.cloudinary.com/dhzouslh1/image/upload/v1774879262/1000152826_yo0hx0.jpg" 
+                src="https://res.cloudinary.com/dhzouslh1/image/upload/v1774970648/1000154838_1_wxdarb.jpg" 
                 alt="Student Growth Chart" 
                 style={{ width: '100%', borderRadius: '10px' }} 
                 referrerPolicy="no-referrer"
