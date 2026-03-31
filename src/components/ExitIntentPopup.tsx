@@ -42,7 +42,7 @@ export default function ExitIntentPopup() {
               </div>
               <h2 className="text-3xl font-bold text-white mb-4 italic serif">Wait! Don't Miss Out...</h2>
               <p className="text-zinc-400 mb-8 text-lg">
-                The next class starts on <span className="text-white font-bold">April 6th</span>. 
+                The next class starts on <span className="text-white font-bold">April 13th</span>. 
                 Slots are filling up fast. Secure your spot now and start your journey to consistent profits.
               </p>
 

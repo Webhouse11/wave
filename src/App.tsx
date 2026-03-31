@@ -17,6 +17,7 @@ import {
   Wallet, 
   ArrowRight,
   Mail,
+  Instagram,
   HelpCircle,
   Clock
 } from 'lucide-react';
@@ -31,7 +32,7 @@ import LegalModal, { TermsContent, PrivacyContent } from './components/LegalModa
 
 // --- Constants ---
 const WHATSAPP_LINK = "https://wa.me/2347063455046?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
-const START_DATE = "2026-04-06T09:00:00";
+const START_DATE = "2026-04-13T09:00:00";
 const PRICE = "₦200,000";
 
 // --- Components ---
@@ -563,7 +564,7 @@ export default function App() {
         <div className="bg-zinc-900 border border-zinc-800 p-12 rounded-[3rem] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent" />
           <h2 className="text-4xl md:text-5xl font-bold mb-8 italic font-serif">Registration Closes Soon</h2>
-          <p className="text-xl text-zinc-400 mb-12">The April batch starts on <span className="text-white font-bold">April 6th</span>. Once the slots are filled, we close registration to focus on our students.</p>
+          <p className="text-xl text-zinc-400 mb-12">The April batch starts on <span className="text-white font-bold">April 13th</span>. Once the slots are filled, we close registration to focus on our students.</p>
           
           <CountdownTimer targetDate={START_DATE} />
           
@@ -660,6 +661,17 @@ export default function App() {
           <div className="flex items-center gap-2">
             <Mail size={16} className="text-green-500" />
             <a href="mailto:wgloacademy@gmail.com" className="hover:text-white transition-colors">wgloacademy@gmail.com</a>
+          </div>
+          <div className="flex items-center gap-2">
+            <Instagram size={16} className="text-green-500" />
+            <a 
+              href="https://www.instagram.com/waveacademy2026?utm_source=qr&igsh=MXI4emZmbmM4NmY3bw==" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-white transition-colors"
+            >
+              @waveacademy2026
+            </a>
           </div>
         </div>
 
