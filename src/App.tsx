@@ -579,17 +579,19 @@ export default function App() {
 
       {/* 12. PRICING SECTION */}
       <Section id="pricing">
-        <div className="max-w-3xl mx-auto bg-zinc-900 border-2 border-green-500 rounded-[3rem] overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.15)]">
+        <div className="max-w-3xl mx-auto bg-zinc-900 border-2 border-green-500 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.15)]">
           <div className="bg-green-500 p-4 text-center">
             <p className="text-white font-black uppercase tracking-widest text-sm">Most Popular Choice</p>
           </div>
-          <div className="p-12 text-center">
-            <h3 className="text-3xl font-bold mb-2 italic font-serif">1 Month Intensive Training</h3>
+          <div className="p-6 md:p-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 italic font-serif">1 Month Intensive Training</h3>
             <p className="text-zinc-500 mb-8">Everything you need to become a pro trader.</p>
             
-            <div className="mb-12">
-              <span className="text-6xl md:text-8xl font-black text-white">{PRICE}</span>
-              <p className="text-zinc-500 mt-4 line-through text-2xl opacity-50">Value: ₦550,000+</p>
+            <div className="mb-12 flex flex-col items-center">
+              <span className="text-4xl sm:text-5xl md:text-8xl font-black text-white block leading-none tracking-tighter">
+                {PRICE}
+              </span>
+              <p className="text-zinc-500 mt-4 line-through text-xl md:text-2xl opacity-50">Value: ₦550,000+</p>
             </div>
 
             <ul className="space-y-4 text-left max-w-md mx-auto mb-12">
