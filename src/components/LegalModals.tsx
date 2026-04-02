@@ -104,4 +104,34 @@ export const PrivacyContent = () => (
   </div>
 );
 
+export const SitemapContent = () => (
+  <div className="space-y-8">
+    <section>
+      <h3 className="text-white font-bold text-lg mb-4">Main Navigation</h3>
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li><a href="#home" className="text-zinc-400 hover:text-green-500 transition-colors">Home</a></li>
+        <li><a href="#about" className="text-zinc-400 hover:text-green-500 transition-colors">About Us</a></li>
+        <li><a href="#pricing" className="text-zinc-400 hover:text-green-500 transition-colors">Pricing</a></li>
+        <li><a href="#contact" className="text-zinc-400 hover:text-green-500 transition-colors">Contact Us</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3 className="text-white font-bold text-lg mb-4">Training & Education</h3>
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li><a href="#curriculum" className="text-zinc-400 hover:text-green-500 transition-colors">Course Curriculum</a></li>
+        <li><a href="#testimonials" className="text-zinc-400 hover:text-green-500 transition-colors">Student Results</a></li>
+        <li><a href="#faq" className="text-zinc-400 hover:text-green-500 transition-colors">Frequently Asked Questions</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3 className="text-white font-bold text-lg mb-4">Legal & Support</h3>
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li><button className="text-zinc-400 hover:text-green-500 transition-colors text-left">Terms of Service</button></li>
+        <li><button className="text-zinc-400 hover:text-green-500 transition-colors text-left">Privacy Policy</button></li>
+        <li><a href="https://wa.me/2347063455046" className="text-zinc-400 hover:text-green-500 transition-colors">WhatsApp Support</a></li>
+      </ul>
+    </section>
+  </div>
+);
+
 export default LegalModal;
