@@ -21,13 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const elem = document.getElementById(targetId);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleNavClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -42,7 +36,7 @@ export default function Navbar() {
         {/* Logo */}
         <a 
           href="#home" 
-          onClick={(e) => scrollToSection(e, '#home')}
+          onClick={handleNavClick}
           className="text-xl font-black italic font-serif uppercase tracking-tighter text-white"
         >
           Wave<span className="text-green-500">Academy</span>
@@ -54,7 +48,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={handleNavClick}
               className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
             >
               {link.name}
@@ -91,7 +85,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
+                  onClick={handleNavClick}
                   className="text-lg font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
                 >
                   {link.name}

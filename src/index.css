@@ -12,6 +12,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-brand-dark text-zinc-100 font-sans antialiased selection:bg-brand-green selection:text-white;
   }
