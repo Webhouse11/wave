@@ -28,7 +28,7 @@ import StickyCTA from './components/StickyCTA';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import ImageGallery from './components/ImageGallery';
 import WhatsAppChatSim from './components/WhatsAppChatSim';
-import LegalModal, { TermsContent, PrivacyContent, SitemapContent } from './components/LegalModals';
+import LegalModal, { TermsContent, PrivacyContent } from './components/LegalModals';
 import Navbar from './components/Navbar';
 
 // --- Constants ---
@@ -692,12 +692,6 @@ export default function App() {
           >
             Privacy
           </button>
-          <button 
-            onClick={() => setLegalModal({ type: 'sitemap', isOpen: true })}
-            className="hover:text-white transition-colors cursor-pointer"
-          >
-            Sitemap
-          </button>
           <a href={WHATSAPP_LINK} className="hover:text-white transition-colors">Contact</a>
         </div>
         <p className="text-zinc-600 text-xs">© 2026 Wave Forex Academy. All rights reserved.</p>
@@ -720,12 +714,6 @@ export default function App() {
         onClose={() => setLegalModal({ ...legalModal, isOpen: false })}
         title="Privacy Policy"
         content={<PrivacyContent />}
-      />
-      <LegalModal
-        isOpen={legalModal.isOpen && legalModal.type === 'sitemap'}
-        onClose={() => setLegalModal({ ...legalModal, isOpen: false })}
-        title="Sitemap"
-        content={<SitemapContent />}
       />
     </div>
   );
