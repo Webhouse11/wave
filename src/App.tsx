@@ -29,6 +29,7 @@ import ExitIntentPopup from './components/ExitIntentPopup';
 import ImageGallery from './components/ImageGallery';
 import WhatsAppChatSim from './components/WhatsAppChatSim';
 import LegalModal, { TermsContent, PrivacyContent } from './components/LegalModals';
+import Navbar from './components/Navbar';
 
 // --- Constants ---
 const WHATSAPP_LINK = "https://wa.me/2347063455046?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
@@ -38,7 +39,7 @@ const PRICE = "₦200,000";
 // --- Components ---
 
 const Section = ({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) => (
-  <section id={id} className={cn("py-20 px-6 max-w-7xl mx-auto", className)}>
+  <section id={id} className={cn("py-20 px-6 max-w-7xl mx-auto scroll-mt-20", className)}>
     {children}
   </section>
 );
@@ -137,11 +138,12 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      <Navbar />
       {/* Progress Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-green-500 origin-left z-[100]" style={{ scaleX }} />
 
       {/* 1. HERO SECTION */}
-      <header className="relative pt-32 pb-20 overflow-hidden border-b border-zinc-800/50">
+      <header id="home" className="relative pt-32 pb-20 overflow-hidden border-b border-zinc-800/50 scroll-mt-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_30%,rgba(34,197,94,0.1),transparent_70%)]" />
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
@@ -448,7 +450,7 @@ export default function App() {
       </Section>
 
       {/* 8. AUTHORITY BUILDING */}
-      <Section className="border-y border-zinc-800">
+      <Section id="about" className="border-y border-zinc-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold italic font-serif mb-8">More Than Just a Signal Group</h2>
           <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
@@ -647,7 +649,7 @@ export default function App() {
       </Section>
 
       {/* Footer */}
-      <footer className="py-20 border-t border-zinc-800 text-center px-6">
+      <footer id="contact" className="py-20 border-t border-zinc-800 text-center px-6 scroll-mt-20">
         <h2 className="text-3xl font-black italic font-serif mb-8 uppercase tracking-tighter">Wave Forex Academy</h2>
         <p className="text-zinc-400 text-sm mb-8 max-w-3xl mx-auto leading-relaxed">
           Wave Forex Academy is a results-driven forex training platform built to turn complete beginners and struggling traders into confident, disciplined market participants through practical, real-time learning. Rather than relying on hype or blind signals, the academy focuses on teaching a clear, structured trading approach—combining live market guidance, consistent trade opportunities, and strong risk management principles—so students understand exactly what they are doing and why. With a supportive learning environment, hands-on mentorship, and a focus on long-term profitability, Wave Forex Academy positions itself as a trusted path for anyone serious about mastering forex and creating a sustainable income skill.

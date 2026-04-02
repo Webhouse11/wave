@@ -40,7 +40,7 @@ export default function ExitIntentPopup() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/10 text-green-500 rounded-full mb-6">
                 <TrendingUp size={32} />
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4 italic serif">Wait! Don't Miss Out...</h2>
+              <h2 className="text-3xl font-bold text-white mb-4 italic font-serif">Wait! Don't Miss Out...</h2>
               <p className="text-zinc-400 mb-8 text-lg">
                 The next class starts on <span className="text-white font-bold">April 13th</span>. 
                 Slots are filling up fast. Secure your spot now and start your journey to consistent profits.
