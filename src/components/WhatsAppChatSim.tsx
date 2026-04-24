@@ -82,7 +82,7 @@ export default function WhatsAppChatSim() {
     } else if (currentStep === 3 && option.toLowerCase().includes('yes')) {
       await botReply("Alright 👍");
       await botReply("Here’s what you’ll get:\n\n📚 1 Month Practical Training\n📊 Live trading sessions\n📡 24/7 signal access\n📈 At least 1 trade opportunity daily\n🎓 Certificate + ongoing support\n\nWe focus on making you understand the market, not just guess.");
-      await botReply("Training fee is ₦50,000");
+      await botReply("Training fee is ₦200,000");
       await botReply("Before I continue…\n\nAre you looking to start immediately if you’re convinced, or just gathering info for now?");
       setCurrentStep(4);
     } else if (currentStep === 4) {
