@@ -34,7 +34,7 @@ import Navbar from './components/Navbar';
 // --- Constants ---
 const WHATSAPP_LINK = "https://wa.me/2347063455046?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
 const START_DATE = "2026-04-13T09:00:00";
-const PRICE = "₦200,000";
+const PRICE = "₦50,000";
 
 // --- Components ---
 
