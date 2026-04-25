@@ -42,7 +42,7 @@ export default function ExitIntentPopup() {
               </div>
               <h2 className="text-3xl font-bold text-white mb-4 italic font-serif">Wait! Don't Miss Out...</h2>
               <p className="text-zinc-400 mb-8 text-lg">
-                The next class starts on <span className="text-white font-bold">April 13th</span>. 
+                The next class starts on <span className="text-white font-bold">May 11th</span>. 
                 Slots are filling up fast. Secure your spot now and start your journey to consistent profits.
               </p>
 
@@ -64,7 +64,7 @@ export default function ExitIntentPopup() {
             </div>
 
             <div className="bg-zinc-800/50 p-4 text-center border-t border-zinc-800">
-              <p className="text-xs text-zinc-500 uppercase tracking-widest">Only 7 slots remaining for April batch</p>
+              <p className="text-xs text-zinc-500 uppercase tracking-widest">Only 7 slots remaining for May batch</p>
             </div>
           </motion.div>
         </div>

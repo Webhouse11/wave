@@ -33,8 +33,8 @@ import Navbar from './components/Navbar';
 
 // --- Constants ---
 const WHATSAPP_LINK = "https://wa.me/2347063455046?text=Hello%2C%20I'm%20interested%20in%20Wave%20Forex%20Academy";
-const START_DATE = "2026-04-13T09:00:00";
-const PRICE = "₦200,000";
+const START_DATE = "2026-05-11T09:00:00";
+const PRICE = "₦50,000";
 
 // --- Components ---
 
@@ -158,7 +158,7 @@ export default function App() {
             <Marquee />
             <Badge className="mb-6">
               <Users size={12} className="text-green-500" />
-              Wave Forex Academy Batch April 2026
+              Wave Forex Academy Batch May 2026
             </Badge>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8 uppercase italic font-serif">
@@ -566,7 +566,7 @@ export default function App() {
         <div className="bg-zinc-900 border border-zinc-800 p-12 rounded-[3rem] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent" />
           <h2 className="text-4xl md:text-5xl font-bold mb-8 italic font-serif">Registration Closes Soon</h2>
-          <p className="text-xl text-zinc-400 mb-12">The April batch starts on <span className="text-white font-bold">April 13th</span>. Once the slots are filled, we close registration to focus on our students.</p>
+          <p className="text-xl text-zinc-400 mb-12">The May batch starts on <span className="text-white font-bold">May 11th</span>. Once the slots are filled, we close registration to focus on our students.</p>
           
           <CountdownTimer targetDate={START_DATE} />
           
@@ -588,6 +588,10 @@ export default function App() {
             <p className="text-zinc-500 mb-8">Everything you need to become a pro trader.</p>
             
             <div className="mb-12 flex flex-col items-center">
+              <Badge className="mb-4 bg-green-500/20 text-green-400 border-green-500/30 animate-bounce">
+                <Zap size={10} />
+                Limited Slot – May 11
+              </Badge>
               <span className="text-4xl sm:text-5xl md:text-8xl font-black text-white block leading-none tracking-tighter">
                 {PRICE}
               </span>
@@ -675,6 +679,17 @@ export default function App() {
               className="hover:text-white transition-colors"
             >
               @waveacademy2026
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" size="16" className="w-4 h-4 fill-green-500" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.54.38-.89.96-1.03 1.6-.14.61-.1 1.25.13 1.83.42.92 1.29 1.57 2.25 1.8 1,.26 2.11-.12 2.8-.89.37-.41.58-.94.62-1.48.05-3.23-.01-6.47.01-9.71z"/></svg>
+            <a 
+              href="https://www.tiktok.com/@wave.academy.2026?_r=1&_t=ZS-95pSAHKRPG5" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-white transition-colors"
+            >
+              Follow us on TikTok for updates
             </a>
           </div>
         </div>
